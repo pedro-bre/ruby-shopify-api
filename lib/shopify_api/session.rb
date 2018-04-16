@@ -40,7 +40,7 @@ module Shopify
 		def get_full_url(endpoint)
 			endpoint[0] = '' if endpoint.start_with?('/')
 
-			URI::HTTPS.build(host: shop, path: "/admin/#{endpoint}").to_s
+			"https://#{shop}/admin/#{endpoint}"
 		end
 
 		def request(method, endpoint, body = {})
